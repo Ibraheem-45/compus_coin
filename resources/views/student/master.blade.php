@@ -171,25 +171,5 @@
   <script src="{{ asset('js/currency-engine.js') }}"></script>
   <script src="{{ asset('js/student/app.js') }}"></script>
   @stack('scripts')
-  <script>
-    const checkAccountStatus = async () => {
-      if (document.visibilityState !== 'visible') return;
-
-      try {
-        const response = await fetch(window.accountStatusRoute, {
-          headers: { Accept: 'application/json' },
-          cache: 'no-store'
-        });
-
-        if (response.redirected) {
-          window.location.replace(response.url);
-        }
-      } catch {
-        // Retry on the next interval
-      }
-    };
-
-    window.setInterval(checkAccountStatus, 5000);
-  </script>
 </body>
 </html>

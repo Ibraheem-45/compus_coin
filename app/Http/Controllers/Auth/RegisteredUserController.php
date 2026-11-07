@@ -56,6 +56,7 @@ class RegisteredUserController extends Controller
             'monthly_allowance_baseline' => $request->monthly_allowance_baseline ?? 0,
             'monthly_saving_goal' => $request->monthly_saving_goal ?? 0,
             'role' => 'student',
+            'status' => 'active',
         ]);
 
         event(new Registered($user));

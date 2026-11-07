@@ -92,6 +92,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         return view('admin.admin-login');
     })->name('login');
 
+    Route::get('/register', [\App\Http\Controllers\Admin\AdminRegisteredUserController::class, 'create'])->name('register');
+    Route::post('/register', [\App\Http\Controllers\Admin\AdminRegisteredUserController::class, 'store'])->name('register.store');
+
     Route::middleware(['auth', 'admin'])->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])
             ->name('dashboard');

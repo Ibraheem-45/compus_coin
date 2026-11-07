@@ -141,8 +141,8 @@
 
       <!-- Footer switch -->
       <div class="text-center mt-4 pt-3 border-top">
-        <a href="{{ route('admin.login') }}" class="small fw-semibold text-decoration-none">
-          <i class="bi bi-speedometer2 me-1"></i> Open Administrator Console
+        <a href="{{ route('admin.register') }}" class="small fw-semibold text-decoration-none" style="color: var(--gold);">
+          <i class="bi bi-shield-plus me-1"></i> Create New Administrator Account
         </a>
       </div>
     </div>
