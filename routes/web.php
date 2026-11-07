@@ -164,3 +164,31 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 require __DIR__ . '/auth.php';
+
+// One-click live database initialization & migration
+Route::get('/setup-db', function () {
+    try {
+        $dbPath = database_path('database.sqlite');
+        if (!\Illuminate\Support\Facades\File::exists($dbPath)) {
+            \Illuminate\Support\Facades\File::put($dbPath, '');
+        }
+        \Illuminate\Support\Facades\Artisan::call('migrate --force');
+        $migrateOutput = \Illuminate\Support\Facades\Artisan::output();
+        \Illuminate\Support\Facades\Artisan::call('db:seed --force');
+        $seedOutput = \Illuminate\Support\Facades\Artisan::output();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Database successfully migrated and seeded with admin & student demo data!',
+            'migrate' => $migrateOutput,
+            'seed' => $seedOutput,
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage(),
+            'file' => $e->getFile() . ':' . $e->getLine(),
+        ], 500);
+    }
+});
+
