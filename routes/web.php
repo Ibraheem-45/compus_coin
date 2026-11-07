@@ -39,7 +39,6 @@ Route::middleware(['auth', 'active'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->middleware('verified')
         ->name('dashboard');
 
     Route::resource('transactions', \App\Http\Controllers\TransactionController::class)
