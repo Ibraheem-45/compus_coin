@@ -1,0 +1,199 @@
+﻿/* ==========================================================================
+   Campus Coin - Responsive & Mobile Optimizations
+   Breakpoints: xs, sm, md, lg, xl, xxl
+   ========================================================================== */
+
+.admin-tip-template-table {
+  min-width: 960px;
+  table-layout: fixed;
+}
+
+.admin-tip-template-table th:nth-child(1),
+.admin-tip-template-table td:nth-child(1) {
+  width: 220px;
+}
+
+.admin-tip-template-table th:nth-child(2),
+.admin-tip-template-table td:nth-child(2) {
+  width: 130px;
+}
+
+.admin-tip-template-table th:nth-child(3),
+.admin-tip-template-table td:nth-child(3) {
+  width: 140px;
+}
+
+.admin-tip-template-table th:nth-child(4),
+.admin-tip-template-table td:nth-child(4) {
+  width: 360px;
+}
+
+.admin-tip-template-table th:nth-child(5),
+.admin-tip-template-table td:nth-child(5) {
+  width: 110px;
+}
+
+.admin-tip-template-table td.tip-template-advice {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Large desktop (>= 1200px) */
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Tablets and below (< 992px) */
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .app-sidebar.show-mobile {
+    transform: translateX(0);
+  }
+
+  .app-main {
+    margin-left: 0 !important;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1025;
+    display: none;
+  }
+
+  .sidebar-backdrop.show {
+    display: block;
+  }
+
+  .mobile-toggle-btn {
+    display: flex !important;
+  }
+}
+
+/* Small tablets & Mobile devices (< 768px) */
+@media (max-width: 767.98px) {
+  .app-content {
+    padding: 1rem;
+  }
+
+  .hero-section {
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .kpi-amount {
+    font-size: 1.5rem;
+  }
+
+  .quick-actions-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .quick-action-btn {
+    justify-content: center;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  /* Mobile Transaction Table into Responsive Cards */
+  .mobile-table-card {
+    display: block;
+  }
+
+  .mobile-table-card .card-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Form layouts */
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .form-actions button,
+  .form-actions a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra small devices (< 576px) */
+@media (max-width: 575.98px) {
+  .app-topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .topbar-greeting h2 {
+    font-size: 1.1rem;
+  }
+
+  .topbar-greeting p {
+    display: none;
+  }
+
+  .quick-actions-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .badge-student {
+    font-size: 0.7rem;
+  }
+}
+
+/* Print styles for Reports */
+@media print {
+
+  .app-sidebar,
+  .app-topbar,
+  .btn,
+  .no-print,
+  .icon-button {
+    display: none !important;
+  }
+
+  .app-main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-content {
+    padding: 0 !important;
+  }
+
+  .card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}

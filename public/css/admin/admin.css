@@ -1,0 +1,513 @@
+/* ==========================================================================
+   Campus Coin - Administrator Portal Stylesheet
+   Theme: Matched with Web Theme (Emerald / Teal Green Palette)
+   ========================================================================== */
+
+:root {
+  --admin-green-dark: #074741;
+  --admin-green-primary: #0d7a70;
+  --admin-green-light: #0f8b80;
+  --admin-green-hover: #119c90;
+  --admin-green-active: #ffffff;
+  --admin-green-border: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Admin Layout Shell ─────────────────────────────────── */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-body, #f8fafc);
+}
+
+.app-main {
+  flex: 1 1 0%;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: calc(100% - 270px);
+}
+
+/* ─── Admin Sidebar (Web-Matched Rich Green Theme) ───────── */
+.app-sidebar.admin-sidebar {
+  width: 270px;
+  background: linear-gradient(180deg, #095c54 0%, #06443e 100%);
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  box-shadow: 4px 0 20px rgba(7, 71, 65, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar Header */
+.admin-sidebar .sidebar-header {
+  padding: 1.35rem 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--admin-green-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-sidebar .sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.admin-sidebar .brand-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.admin-sidebar .brand-logo-text {
+  color: #ffffff;
+}
+
+.admin-sidebar .brand-logo-text span {
+  color: #a7f3d0;
+}
+
+/* Sidebar Menu */
+.admin-sidebar .sidebar-menu {
+  flex: 1;
+  padding: 1rem 0.85rem;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+}
+
+.admin-sidebar .sidebar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0.85rem 0.75rem 0.35rem;
+}
+
+.admin-sidebar .sidebar-item {
+  margin-bottom: 0.35rem;
+}
+
+/* Sidebar Links & Hover */
+.admin-sidebar .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 11px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.admin-sidebar .sidebar-link i {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Polished Sidebar Hover Effect */
+.admin-sidebar .sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.admin-sidebar .sidebar-link:hover i {
+  color: #a7f3d0;
+  transform: scale(1.1);
+}
+
+/* Active Sidebar Link */
+.admin-sidebar .sidebar-link.active {
+  background-color: #ffffff;
+  color: #064e3b;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: translateX(4px);
+}
+
+.admin-sidebar .sidebar-link.active i {
+  color: #0d9488;
+}
+
+/* Badges inside Sidebar */
+.admin-sidebar .sidebar-badge {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 20px;
+  margin-left: auto;
+  font-weight: 700;
+}
+
+.admin-sidebar .sidebar-link:not(.active) .badge-light-green {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.admin-sidebar .sidebar-link.active .badge-light-green {
+  background-color: #e6fffa;
+  color: #0d9488;
+}
+
+/* Sidebar Footer */
+.admin-sidebar .sidebar-footer {
+  padding: 1.15rem 1.25rem;
+  border-top: 1px solid var(--admin-green-border);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.admin-sidebar .user-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-sidebar .admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #064e3b;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.admin-sidebar .admin-info-name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.admin-sidebar .admin-info-sub {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+}
+
+.admin-sidebar .btn-admin-logout {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.admin-sidebar .btn-admin-logout:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* ─── Admin Navbar (Topbar Matching Green Theme) ─────────── */
+.app-topbar.admin-topbar {
+  background: linear-gradient(90deg, #0d7a70 0%, #0f8b80 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.95rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 4px 20px rgba(13, 122, 112, 0.18);
+}
+
+.admin-topbar .topbar-greeting h2 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.3px;
+}
+
+.admin-topbar .topbar-greeting p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
+.admin-topbar .icon-button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-topbar .icon-button:hover {
+  background: #ffffff;
+  color: #0d7a70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.admin-topbar .btn-topbar-text-size {
+  min-width: 38px;
+  height: 38px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.admin-topbar .btn-topbar-text-size:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #0d7a70;
+}
+
+.admin-topbar .btn-topbar-text-size:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+.admin-topbar .btn-topbar-action {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9px;
+  transition: all 0.2s;
+}
+
+.admin-topbar .btn-topbar-action:hover {
+  background: #ffffff;
+  color: #0d7a70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.admin-topbar .system-health-pill {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.admin-topbar .system-health-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.35);
+}
+
+/* ─── Cards & Hovers in Admin Panel ──────────────────────── */
+.admin-card {
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-card:hover {
+  border-color: #0d9488;
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
+  transform: translateY(-3px);
+}
+
+.kpi-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15);
+  border-color: #99f6e4;
+}
+
+/* Buttons in Admin Panel */
+.btn-primary {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  border-color: #0d9488;
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  border-color: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d9488;
+  border-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+}
+
+/* Tables in Admin Panel */
+.admin-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: rgba(13, 148, 136, 0.04);
+}
+
+/* ─── Responsive Optimizations ──────────────────────────── */
+@media (max-width: 991.98px) {
+  .app-sidebar.admin-sidebar {
+    transform: translateX(-100%);
+    z-index: 1050;
+  }
+
+  .app-sidebar.admin-sidebar.show-mobile {
+    transform: translateX(0);
+  }
+
+  .app-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(6, 44, 40, 0.65);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1040;
+    display: none;
+  }
+
+  .sidebar-backdrop.show {
+    display: block;
+  }
+}
+
+.admin-recent-transactions-table {
+  min-width: 960px;
+  table-layout: fixed;
+}
+
+.admin-recent-transactions-table th:nth-child(1),
+.admin-recent-transactions-table td:nth-child(1) {
+  width: 160px;
+}
+
+.admin-recent-transactions-table th:nth-child(2),
+.admin-recent-transactions-table td:nth-child(2) {
+  width: 320px;
+}
+
+.admin-recent-transactions-table th:nth-child(3),
+.admin-recent-transactions-table td:nth-child(3) {
+  width: 130px;
+}
+
+.admin-recent-transactions-table th:nth-child(4),
+.admin-recent-transactions-table td:nth-child(4) {
+  width: 100px;
+}
+
+.admin-recent-transactions-table th:nth-child(5),
+.admin-recent-transactions-table td:nth-child(5) {
+  width: 130px;
+}
+
+.admin-recent-transactions-table th:nth-child(6),
+.admin-recent-transactions-table td:nth-child(6) {
+  width: 120px;
+}
+
+.admin-recent-transactions-table .recent-transaction-description {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767.98px) {
+  .app-content {
+    padding: 1rem 0.85rem !important;
+  }
+
+  .app-topbar.admin-topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .admin-topbar .topbar-greeting h2 {
+    font-size: 1.15rem;
+  }
+
+  .admin-topbar .topbar-greeting p {
+    display: none;
+  }
+
+  .kpi-amount {
+    font-size: 1.35rem;
+  }
+
+  .table-responsive {
+    border-radius: 12px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table.admin-table th,
+  .table.admin-table td {
+    white-space: nowrap;
+    padding: 0.65rem 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .kpi-card {
+    padding: 0.9rem;
+  }
+
+  .btn-group-sm>.btn {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.75rem;
+  }
+}
